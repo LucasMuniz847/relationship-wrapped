@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retrospectiva</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <!-- Música -->
+     <audio id="bgMusic" loop>
+        <source src="assets/music/luan-santana-te-vivo.mp3" type="audio/mpeg">
+     </audio>
+
+     <!-- Barras de progresso -->
+      <div class="progress-container">
+        
+        <div class="progress-item">
+            <div class="progress-bar"></div>
+        </div>
+
+        <div class="progress-item">
+            <div class="progress-bar"></div>
+        </div>
+
+        <div class="progress-item">
+            <div class="progress-bar"></div>
+        </div>
+
+        <div class="progress-item">
+            <div class="progress-bar"></div>
+        </div>
+
+      </div>
+
+      <!-- Área principal -->
+       <main id="stories">
+        <!-- Tela 1 -->
+         <section class="story active opening-screen">
+            
+            <div class="content">
+
+                <span class="tag">Spotify Wrapped</span>
+                
+                <h1>História</h1>
+
+                <button id="startButton">Dar o play</button>
+            
+            </div>
+         
+        </section>
+
+        <!-- Tela 2 -->
+         <section class="story">
+
+            <div class="content">
+
+                <span class="tag">Sua Retrospectiva</span>
+
+                <h2>Os números</h2>
+
+                <div class="stat">
+                    <span class="number">730</span>
+                    <p>Dias juntos</p>
+                </div>
+
+                <div class="stat">
+                    <span class="number">12.500</span>
+                    <p>Horas rindo</p>
+                </div>
+
+                <div class="stat">
+                    <span class="number">1</span>
+                    <p>Música favorita</p>
+                </div>
+
+            </div>
+
+         </section>
+
+         <!-- Tela 3 -->
+          <section class="story">
+
+            <div class="content">
+
+                <span class="tag">
+                    Momento Marcante
+                </span>
+
+                <div class="photo-frame">
+                    <img src="assets/fotos/" alt="Nossa foto">
+                </div>
+                <p class="caption">Momento favorito</p>
+
+            </div>
+
+          </section>
+
+          <!-- Tela 4 -->
+           <section class="story">
+
+            <div class="content">
+
+                <span class="tag">Sua playlist do ano</span>
+
+                <h2>Faixa Final</h2>
+
+                <p class="final-message">
+                    Entre todas as músicas,
+                    lugares e momentos,
+                    meu favotrito continua sendo
+                    dividir a vida com você.
+                </p>
+
+            </div>
+
+           </section>
+       
+    </main>
+
+    <!-- Áreas clicáveis -->
+     <div class="touch-left"></div>
+     <div class="touch-right"></div>
+
+     <script src="js/script.js" defer></script>
+
+</body>
+</html>

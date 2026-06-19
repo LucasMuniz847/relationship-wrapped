@@ -1,0 +1,187 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    background: #000;
+    color: white;
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* === PROGRESSO === */
+
+.progress-container{
+    position: fixed;
+    top: 15px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+    z-index: 999;
+}
+
+.progress-item{
+    flex: 1;
+    height: 4px;
+    background: rgba(255, 255, 255, .25);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.progress-bar{
+    width: 0%;
+    height: 100%;
+    background: white;
+}
+
+/* === STORIES === */
+
+.story{
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+}
+
+.story.active{
+    display: flex;
+}
+
+.content{
+    max-width: 360px;
+}
+
+.tag{
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: #1DB954;
+    font-size: .8rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+h1, h2{
+    font-weight: 900;
+    line-height: 1;
+}
+
+h1{
+    font-size: 3rem;
+}
+
+h2{
+    font-size: 2.8rem;
+}
+
+.opening-screen{
+    background: linear-gradient(
+        135deg,
+        #0d0d0d,
+        #1DB954
+    );
+}
+
+.story:nth-child(2){
+    background: linear-gradient(
+        135deg,
+        #6A00FF,
+        #FF006E
+    );
+}
+
+.story:nth-child(3){
+    background: linear-gradient(
+        135deg,
+        #ffbe0b,
+        #fb5607
+    );
+}
+
+.story:nth-child(4){
+    background: linear-gradient(
+        135deg,
+        #001219,
+        #1DB954
+    );
+}
+
+/* === BOTÃO === */
+
+button{
+    margin-top: 30px;
+    border: none;
+    background: white;
+    color: black;
+    padding: 18px 28px;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+/* === ESTATÍSTICAS === */
+
+.stat{
+    margin: 20px 0;
+}
+
+.number{
+    display: block;
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+/* === FOTO === */
+.photo-frame{
+    width: 280px;
+    height: 360px;
+    border-radius: 30px;
+    overflow: hidden;
+    margin: 20px auto;
+    border: 6px solid white;
+}
+
+.photo-frame img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.caption{
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+/* === FINAL ===*/
+
+.final-message{
+    margin-top: 20px;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    font-weight: 700;
+}
+
+/* === ÁREAS DE TOQUE === */
+
+.touch-left, .touch-right{
+    position: fixed;
+    top: 0;
+    width: 50%;
+    height: 100vh;
+    z-index: 500;
+}
+
+.touch-left{
+    left: 0;
+}
+
+.touch-right{
+    right: 0;
+}
