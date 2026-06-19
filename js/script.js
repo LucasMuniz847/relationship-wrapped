@@ -82,6 +82,19 @@ function prevStory(){
     }
 }
 
+async function iniciarExperiencia(params) {
+    try {
+        await bgMusic.play();
+
+        document.startViewTransition(() => {
+            currentStory = 1;
+            showStory(currentStory);
+        });
+    } catch (erro) {
+        console.error(erro);
+    }
+}
+
 startButton.addEventListener("click", ()=>{
 
     bgMusic.volume = 1;
