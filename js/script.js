@@ -84,7 +84,12 @@ function prevStory(){
 
 startButton.addEventListener("click", ()=>{
 
-    bgMusic.play();
+    bgMusic.volume = 1;
+    bgMusic.play().then(() => {
+        console.log("tocando");
+    }).catch(err => {
+        console.error(err);
+    });
     currentStory = 1;
     showStory(currentStory);
 });
