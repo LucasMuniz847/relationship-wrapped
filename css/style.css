@@ -124,6 +124,8 @@ button{
     border-radius: 999px;
     font-size: 1rem;
     font-weight: 800;
+    position: relative;
+    z-index: 1001;
 }
 
 /* === ESTATÍSTICAS === */

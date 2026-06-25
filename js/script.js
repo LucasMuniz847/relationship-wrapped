@@ -2,10 +2,10 @@ const stories = document.querySelectorAll(".story");
 const progressBars = document.querySelectorAll(".progress-bar");
 
 const startButton = document.getElementById("startButton");
-const bgMusic =  document.getElementById("bgMusic");
+const bgMusic = document.getElementById("bgMusic");
 
-const touchLeft = document.querySelector(".touch-left")
-const touchRight = document.querySelector(".touch-right")
+const touchLeft = document.querySelector(".touch-left");
+const touchRight = document.querySelector(".touch-right");
 
 let currentStory = 0;
 let timer;
@@ -31,30 +31,37 @@ function showStory(index){
 function updateProgress(index){
 
     progressBars.forEach((bar,i)=>{
+
         if(i < index){
             bar.style.width = "100%";
         }
         else{
             bar.style.width = "0%";
         }
+
     });
 
     animateCurrentBar(index);
 }
 
 function animateCurrentBar(index){
+
     let width = 0;
 
     clearInterval(progressInterval);
-    
+
     progressInterval = setInterval(()=>{
+
         width += 2;
+
         progressBars[index].style.width = width + "%";
 
         if(width >= 100){
             clearInterval(progressInterval);
         }
+
     }, STORY_DURATION / 50);
+
 }
 
 function startAutoAdvance(){
@@ -62,55 +69,55 @@ function startAutoAdvance(){
     clearTimeout(timer);
 
     timer = setTimeout(()=>{
+
         nextStory();
+
     }, STORY_DURATION);
+
 }
 
 function nextStory(){
 
     if(currentStory < stories.length - 1){
+
         currentStory++;
+
         showStory(currentStory);
+
     }
+
 }
 
 function prevStory(){
 
     if(currentStory > 1){
+
         currentStory--;
+
         showStory(currentStory);
-    }
-}
 
-async function iniciarExperiencia(params) {
-    try {
-        await bgMusic.play();
-
-        document.startViewTransition(() => {
-            currentStory = 1;
-            showStory(currentStory);
-        });
-    } catch (erro) {
-        console.error(erro);
     }
+
 }
 
 startButton.addEventListener("click", ()=>{
 
-    bgMusic.volume = 1;
-    bgMusic.play().then(() => {
-        console.log("tocando");
-    }).catch(err => {
-        console.error(err);
-    });
+    bgMusic.play();
+
     currentStory = 1;
+
     showStory(currentStory);
+
 });
 
 touchRight.addEventListener("click", ()=>{
+
     nextStory();
+
 });
 
 touchLeft.addEventListener("click", ()=>{
+
     prevStory();
+
 });

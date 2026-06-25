@@ -1,10 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Debug Audio</title>
+</head>
 <body>
 
-<audio controls>
-    <source src="./assets/music/luan-santana-te-vivo.mp3" type="audio/mpeg">
-</audio>
+<button id="startButton">Tocar música</button>
+
+<audio id="bgMusic" loop></audio>
+
+<script>
+const bgMusic = document.getElementById("bgMusic");
+const startButton = document.getElementById("startButton");
+
+// força carregamento direto
+bgMusic.src = "./assets/music/luan-santana-te-vivo.mp3";
+bgMusic.load();
+
+console.log("src final:", bgMusic.src);
+
+startButton.addEventListener("click", async () => {
+    try {
+        bgMusic.volume = 1;
+
+        await bgMusic.play();
+
+        console.log("🎵 tocando");
+
+    } catch (err) {
+        console.error("erro play:", err);
+    }
+});
+</script>
 
 </body>
 </html>
